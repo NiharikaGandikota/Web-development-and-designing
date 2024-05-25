@@ -1,0 +1,101 @@
+HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><u>Tribute Page</u></h1>
+        </header>
+        <main>
+            <img src="nehru.jpg.png" alt="Jawaharlal Nehru" class="profile-image">
+            <section class="tribute-text">
+                <h2><i> Jawaharlal Nehru</i></h2>
+                <p>Jawaharlal Nehru, the first Prime Minister of India, was a visionary leader and a key figure in India's struggle for independence. His leadership, intellect, and commitment to social justice left an indelible mark on the nation.</p>
+                
+                <p>Nehru's passion for education and belief in the power of knowledge led to the establishment of numerous educational institutions across India, including the prestigious Indian Institutes of Technology (IITs) and the All India Institute of Medical Sciences (AIIMS).</p>
+                
+                <p>As a staunch advocate for democracy and secularism, Nehru played a pivotal role in shaping India's democratic institutions and ensuring the country's secular ethos. His emphasis on unity in diversity continues to be a guiding principle for the nation.</p>
+                
+                <p>Nehru's contributions to nation-building, his advocacy for peace and disarmament on the global stage, and his commitment to social and economic development have earned him a revered place in the hearts of millions of Indians.</p>
+            </section>
+        </main>
+        <footer>
+            <p><b>Created with love and admiration</b></p>
+        </footer>
+    </div>
+</body>
+</html>
+
+CSS:
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ff4500;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.profile-image {
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #ff4500;
+}
+
+.tribute-text {
+    margin: 20px 0;
+}
+
+.tribute-text h2 {
+    color: #ff4500;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.tribute-text p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #ff4500;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+}
