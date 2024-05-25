@@ -1,0 +1,190 @@
+
+HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Gandikota Niharika</h1>
+            <p>Web Developer</p>
+        </div>
+    </header>
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2><b>About Me</b></h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I am a web developer with few experience and user-friendly websites. I enjoy turning complex problems into simple, beautiful, and intuitive designs.</p>
+                        <p>As a web developer, I specialize in front-end technologies like HTML, CSS, and JavaScript</p>
+                    </div>
+                    <div class="profile-img">
+                        <img src="profile.jpg" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+                <p><b>I had completed some projects based on web developer</b></p>
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <img src="project1.jpg.png" alt="Project 1">
+                    <p>The about project is register form page created by me using html and css . This is my first web project. </p>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <img src="project2.jpg.png" alt="Project 2">
+                    <p>The about project is Landing Page created by me using html and css. This is my second web project.</p>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us!</p>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            </div>
+        </section>
+
+        <!-- Other sections like Projects, Skills, Contact can be added here -->
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Niharika</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+CSS:
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.main {
+    background-color: #f2f2f2;
+    padding: 20px 0;
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.profile-img {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-img img {
+    border-radius: 50%;
+    max-width: 200px;
+    height: auto;
+    border: 5px solid #4CAF50;
+}
+.project{
+    text-align: left;
+}
+
+.project img{
+    
+    border: 5px solid #4CAF50;
+
+}
+
+footer {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer form {
+    margin-top: 30px;
+}
+
+footer input, footer textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: aqua;
+}
+
+footer button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e55e00;
+}
+
