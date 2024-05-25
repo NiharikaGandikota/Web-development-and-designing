@@ -1,0 +1,167 @@
+HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="calculator-display" id="display">0</div>
+        <div class="calculator-keys">
+            <button class="key" onclick="appendNumber('7')">7</button>
+            <button class="key" onclick="appendNumber('8')">8</button>
+            <button class="key" onclick="appendNumber('9')">9</button>
+            <button class="key operator" onclick="chooseOperation('/')">/</button>
+            <button class="key" onclick="appendNumber('4')">4</button>
+            <button class="key" onclick="appendNumber('5')">5</button>
+            <button class="key" onclick="appendNumber('6')">6</button>
+            <button class="key operator" onclick="chooseOperation('*')">*</button>
+            <button class="key" onclick="appendNumber('1')">1</button>
+            <button class="key" onclick="appendNumber('2')">2</button>
+            <button class="key" onclick="appendNumber('3')">3</button>
+            <button class="key operator" onclick="chooseOperation('-')">-</button>
+            <button class="key" onclick="appendNumber('0')">0</button>
+            <button class="key" onclick="appendNumber('.')">.</button>
+            <button class="key" onclick="clearDisplay()">C</button>
+            <button class="key operator" onclick="chooseOperation('+')">+</button>
+            <button class="key equal-sign" onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script src="sccript.js"></script>
+</body>
+</html>
+
+  CSS:
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.calculator-display {
+    background-color: #222;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 20px;
+    text-align: right;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+.key {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.key:hover {
+    background-color: #d0d0d0;
+}
+
+.operator {
+    background-color: #f9a825;
+    color: #fff;
+}
+
+.operator:hover {
+    background-color: #f57f17;
+}
+
+.equal-sign {
+    grid-column: span 4;
+    background-color: #0d47a1;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.equal-sign:hover {
+    background-color: #0b3c91;
+}
+
+Js:
+
+let currentInput = '';
+let previousInput = '';
+let operation = null;
+const display = document.getElementById('display');
+
+function appendNumber(number) {
+    if (currentInput.includes('.') && number === '.') return;
+    currentInput = currentInput.toString() + number.toString();
+    updateDisplay();
+}
+
+function chooseOperation(op) {
+    if (currentInput === '') return;
+    if (previousInput !== '') {
+        calculate();
+    }
+    operation = op;
+    previousInput = currentInput;
+    currentInput = '';
+}
+
+function calculate() {
+    let computation;
+    const prev = parseFloat(previousInput);
+    const current = parseFloat(currentInput);
+    if (isNaN(prev) || isNaN(current)) return;
+    switch (operation) {
+        case '+':
+            computation = prev + current;
+            break;
+        case '-':
+            computation = prev - current;
+            break;
+        case '*':
+            computation = prev * current;
+            break;
+        case '/':
+            computation = prev / current;
+            break;
+        default:
+            return;
+    }
+    currentInput = computation;
+    operation = undefined;
+    previousInput = '';
+    updateDisplay();
+}
+
+function clearDisplay() {
+    currentInput = '';
+    previousInput = '';
+    operation = undefined;
+    updateDisplay();
+}
+
+function updateDisplay() {
+    display.innerText = currentInput;
+}
